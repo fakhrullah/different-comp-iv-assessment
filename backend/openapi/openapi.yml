@@ -22,8 +22,6 @@ paths:
                 type: array
                 items: 
                   $ref: '#/components/schemas/person'
-
-  /people/{personId}:
     post:
       tags:
         - "People"
@@ -42,6 +40,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/person'
+
+  /people/{personId}:
 
     get:
       tags:
@@ -105,8 +105,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/pet'
-
-  /pets/{petId}:
     post:
       tags:
         - "Pets"
@@ -125,6 +123,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pet'
+
+  /pets/{petId}:
 
     get:
       tags:
