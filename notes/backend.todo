@@ -23,11 +23,11 @@
     ✔ DELETE `/people/:id` - Delete user data @done(21-10-28 16:02)
 
     # Pets
-    ☐ GET `/pets` - get pets list - pagination?
-    ☐ POST `/pets` data: `{...}` - Create a pet
-    ☐ GET `/pets/:id`
+    ✔ GET `/pets` - get pets list - pagination? @done(21-10-28 16:12)
+    ✔ POST `/pets` data: `{...}` - Create a pet @done(21-10-28 16:13)
+    ✔ GET `/pets/:id` @done(21-10-28 16:13)
     ☐ GET `/pets?search={owner=personID}`
     ☐ PUT `/pets` data: `{action: ["assign", "remove"], owner: personID}`
     ☐ PUT `/pets` data: `{propA: 'nyaa', weight: 4, category: 'cat'}`
     # PUT `/pets` data: `{id: '0ufuew98fuew9'}` filter out `id` using JOI
-    ☐ DELETE `/PETS/:id` - sometimes we do not want to permanent delete but use soft-delete & purge for hard delete
+    ✔ DELETE `/PETS/:id` - sometimes we do not want to permanent delete but use soft-delete & purge for hard delete @done(21-10-28 16:13)

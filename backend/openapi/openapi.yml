@@ -10,6 +10,8 @@ paths:
   # People
   /people:
     get:
+      tags:
+        - "People"
       summary: Get people
       responses:
         '200':
@@ -23,6 +25,8 @@ paths:
 
   /people/{personId}:
     post:
+      tags:
+        - "People"
       summary: Create new person
       parameters:
         - $ref: '#/components/parameters/personId'
@@ -40,6 +44,8 @@ paths:
                 $ref: '#/components/schemas/person'
 
     get:
+      tags:
+        - "People"
       summary: Get a person by ID
       parameters:
         - $ref: '#/components/parameters/personId'
@@ -52,6 +58,8 @@ paths:
                 $ref: '#/components/schemas/person'
 
     put:
+      tags:
+        - "People"
       summary: Update a person data
       parameters:
         - $ref: '#/components/parameters/personId'
@@ -69,6 +77,8 @@ paths:
                 $ref: '#/components/schemas/person'
 
     delete:
+      tags:
+        - "People"
       summary: Delete person by id
       parameters:
         - $ref: '#/components/parameters/personId'
@@ -79,6 +89,95 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/person'
+
+  # Pets
+  /pets:
+    get:
+      tags:
+        - "Pets"
+      summary: List of pets
+      responses:
+        '200':
+          description: List of pets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/pet'
+
+  /pets/{petId}:
+    post:
+      tags:
+        - "Pets"
+      summary: Create new person
+      parameters:
+        - $ref: '#/components/parameters/petId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pet'
+      responses:
+        '200':
+          description: New created pet data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pet'
+
+    get:
+      tags:
+        - "Pets"
+      summary: Get a pet by ID
+      parameters:
+        - $ref: '#/components/parameters/petId'
+      responses:
+        '200':
+          description: A pet data that has same id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pet'
+
+    put:
+      tags:
+        - "Pets"
+      summary: Update a pet data
+      parameters:
+        - $ref: '#/components/parameters/petId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pet'
+      responses:
+        '200':
+          description: New updated pet data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pet'
+
+    delete:
+      tags:
+        - "Pets"
+      summary: Delete pet by id
+      parameters:
+        - $ref: '#/components/parameters/petId'
+      responses:
+        '200':
+          description: Deleted pet data. Data before deleted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pet'
+
+
+
+tags:
+  - name: Pets
+  - name: People
 
 components:
   schemas:
@@ -103,3 +202,10 @@ components:
         type: string
         example: sjdf68ASej09w#JH83o
       description: Person ID to look
+    petId:
+      name: petId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Pet unique ID
