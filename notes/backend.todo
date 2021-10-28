@@ -15,12 +15,12 @@
 ☐ OpenAPI docs for:
     # people CRUD & also list
     ✔ GET `/people` - list 25 people - paginations? @done(21-10-28 12:48)
-    ☐ POST `/people` - Create a person
-    ☐ GET `/people/:id` - find person by id
+    ✔ POST `/people` - Create a person @done(21-10-28 16:02)
+    ✔ GET `/people/:id` - find person by id @done(21-10-28 16:02)
     ☐ GET `/people/search={friends=[personID]}` find people by friends (personID)
     ☐ PUT `/people` data: `{action: enum["assign", "remove"], friends=[personID]}` - Update person data
     # PUT `/people` data: `{...props}` also filter with JOI - update
-    ☐ DELETE `/people/:id` - Delete user data
+    ✔ DELETE `/people/:id` - Delete user data @done(21-10-28 16:02)
 
     # Pets
     ☐ GET `/pets` - get pets list - pagination?

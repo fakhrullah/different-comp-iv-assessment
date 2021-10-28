@@ -1,0 +1,105 @@
+openapi: '3.0.2'
+info:
+  title: API for human & pets
+  version: '1.0'
+servers:
+  - url: http://localhost:4000/
+  
+paths:
+  
+  # People
+  /people:
+    get:
+      summary: Get people
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/person'
+
+  /people/{personId}:
+    post:
+      summary: Create new person
+      parameters:
+        - $ref: '#/components/parameters/personId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/person'
+      responses:
+        '200':
+          description: New created person data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+
+    get:
+      summary: Get a person by ID
+      parameters:
+        - $ref: '#/components/parameters/personId'
+      responses:
+        '200':
+          description: A person data that has same id
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+
+    put:
+      summary: Update a person data
+      parameters:
+        - $ref: '#/components/parameters/personId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/person'
+      responses:
+        '200':
+          description: New updated person data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+
+    delete:
+      summary: Delete person by id
+      parameters:
+        - $ref: '#/components/parameters/personId'
+      responses:
+        '200':
+          description: Deleted person data. Data before deleted.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+
+components:
+  schemas:
+    person:
+      type: object
+      properties:
+        id:
+          type: string
+
+    pet:
+      type: object
+      properties:
+        id:
+          type: string
+        
+  parameters:
+    personId:
+      name: personId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: sjdf68ASej09w#JH83o
+      description: Person ID to look
