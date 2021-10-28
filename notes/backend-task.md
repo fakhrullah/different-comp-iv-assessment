@@ -27,6 +27,8 @@
       3) Any person can have several ohter friends ([Person, Person, Person] <---> [Person, Person, Person])
 3. API 
    1) CREATE - create PETS and PEOPLE (create one? or create bulk?)
+         * POST `/pets/` - data `{...}`
+         * POST `/people/` - data: `{...}`
    2) READ
       - PETS should searchable by their ID or by their PERSON
         * GET `/pets/:id`

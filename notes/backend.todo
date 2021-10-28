@@ -1,0 +1,33 @@
+✔ understand requirements @done(21-10-28 12:37)
+✔ list all path @done(21-10-28 12:40)
+    ✔ GET `/pets/:id` @done(21-10-28 12:40)
+    ✔ GET `/pets?search={owner=personID}` @done(21-10-28 12:40)
+    ✔ GET `/people/:id` @done(21-10-28 12:40)
+    ✔ GET `/people/search={friends=[personID]}` @done(21-10-28 12:40)
+    ✔ PUT `/pets` data: `{action: ["assign", "remove"], owner: personID}` @done(21-10-28 12:40)
+    ✔ PUT `/pets` data: `{propA: 'nyaa', weight: 4, category: 'cat'}` @done(21-10-28 12:40)
+    ✔ PUT `/pets` data: `{id: '0ufuew98fuew9'}` filter out `id` using JOI @done(21-10-28 12:40)
+    ✔ PUT `/people` data: `{action: enum["assign", "remove"], friends=[personID]}` @done(21-10-28 12:40)
+    ✔ PUT `/people` data: `{...props}` also filter with JOI @done(21-10-28 12:40)
+    ✔ DELETE `/PETS/:id` - sometimes we do not want to permanent delete but use soft-delete & purge for hard delete @done(21-10-28 12:40)
+    ✔ DELETE `/people/:id` @done(21-10-28 12:40)
+
+☐ OpenAPI docs for:
+    # people CRUD & also list
+    ✔ GET `/people` - list 25 people - paginations? @done(21-10-28 12:48)
+    ☐ POST `/people` - Create a person
+    ☐ GET `/people/:id` - find person by id
+    ☐ GET `/people/search={friends=[personID]}` find people by friends (personID)
+    ☐ PUT `/people` data: `{action: enum["assign", "remove"], friends=[personID]}` - Update person data
+    # PUT `/people` data: `{...props}` also filter with JOI - update
+    ☐ DELETE `/people/:id` - Delete user data
+
+    # Pets
+    ☐ GET `/pets` - get pets list - pagination?
+    ☐ POST `/pets` data: `{...}` - Create a pet
+    ☐ GET `/pets/:id`
+    ☐ GET `/pets?search={owner=personID}`
+    ☐ PUT `/pets` data: `{action: ["assign", "remove"], owner: personID}`
+    ☐ PUT `/pets` data: `{propA: 'nyaa', weight: 4, category: 'cat'}`
+    # PUT `/pets` data: `{id: '0ufuew98fuew9'}` filter out `id` using JOI
+    ☐ DELETE `/PETS/:id` - sometimes we do not want to permanent delete but use soft-delete & purge for hard delete
